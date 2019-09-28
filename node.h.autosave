@@ -1,0 +1,43 @@
+#ifndef NODE_H
+#define NODE_H
+#include<plane.h>
+
+class Node
+{
+private:
+     Plane * plane;
+     Node * previous;
+     Node * next;
+public:
+     Node( Plane * plane,Node * previous,Node * next){
+         this->plane=plane;
+         this->previous=previous;
+         this->next=next;
+     }
+     Node(QString name, int id){
+         this->plane=new Plane(name,id);
+         this->previous=NULL;
+         this->next=NULL; 
+     }
+     Plane* SetPlane(Plane* plane){
+         this->plane=plane;
+     }
+     Plane* getPlane(){
+     return this->plane;
+     }
+     Node* setPrevious(Node* previous){
+         this->previous=previous;
+     }
+     Node * getPrevious(){
+         return this->next;
+     }
+     Node * setNext(Node*next){
+         this->next=next;
+     }
+     Node*getNext(){
+         return this->next;
+     }
+     
+};
+
+#endif // NODE_H
